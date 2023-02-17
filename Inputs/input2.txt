@@ -1,0 +1,12 @@
+Fly Goal 103
+Arapahoe Egg 22
+Arapahoe Bar 55
+Bar Egg 41
+Bar Cry 41
+Cry Dash 65
+Arapahoe Ice 88
+Arapahoe Hatch 5
+Hatch Jade 7
+Fly Keck 142
+Goal Keck 51
+END OF INPUT
