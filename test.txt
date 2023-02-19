@@ -1,0 +1,117 @@
+
+def plot_graph(adjacency_list):
+    '''
+    Takes an adjacency list as input.
+    Draws a graph of nodes and their connections.
+    '''
+    
+    # Create a new graph object
+    G = nx.Graph()
+    
+    # Add nodes to the graph
+    nodes = list(adjacency_list.keys())
+    G.add_nodes_from(nodes)
+    
+    # Add edges to the graph
+    for node, connections in adjacency_list.items():
+        for connection in connections:
+            G.add_edge(node, connection[0], weight=connection[1])
+    
+    # Get the positions of the nodes in the graph
+    pos = nx.spring_layout(G)
+    
+    # Draw the nodes
+    nx.draw_networkx_nodes(G, pos, node_color='lightblue', node_size=50)
+    
+    # Draw the edges
+    edges = G.edges()
+    weights = [G[u][v]['weight'] for u, v in edges]
+    nx.draw_networkx_edges(G, pos, edgelist=edges, width=0.5, edge_color='gray')
+    
+    # Draw the labels
+    nx.draw_networkx_labels(G, pos, font_size=5, font_family='sans-serif')
+    
+    # Add a title and display the graph
+    plt.title("Graph of Nodes and Connections")
+    plt.axis('off')
+    plt.show()
+
+
+-------------
+
+def plot_graph(adjacency_list):
+    '''
+    Takes an adjacency list as input.
+    Draws a graph of nodes and their connections.
+    '''
+    
+    # Create a new graph object
+    G = nx.Graph()
+    
+    # Add nodes to the graph
+    nodes = list(adjacency_list.keys())
+    G.add_nodes_from(nodes)
+    
+    # Add edges to the graph
+    for node, connections in adjacency_list.items():
+        for connection in connections:
+            G.add_edge(node, connection[0], weight=connection[1])
+    
+    # Get the positions of the nodes in the graph
+    pos = nx.spring_layout(G, k=0.15, iterations=20)
+    # pos = nx.spring_layout(G, k=0.3, iterations=50)
+    
+    # Draw the nodes
+    nx.draw_networkx_nodes(G, pos, node_color='lightblue', node_size=50)
+    
+    # Draw the edges
+    edges = G.edges()
+    weights = [G[u][v]['weight'] for u, v in edges]
+    nx.draw_networkx_edges(G, pos, edgelist=edges, width=0.5, edge_color='gray')
+    
+    # Draw the labels
+    nx.draw_networkx_labels(G, pos, font_size=5, font_family='sans-serif')
+    
+    # Add a title and display the graph
+    plt.title("Graph of Nodes and Connections")
+    plt.axis('off')
+    plt.show()
+
+----------------
+
+def plot_graph(adjacency_list):
+    '''
+    Takes an adjacency list as input.
+    Draws a graph of nodes and their connections.
+    '''
+    
+    # Create a new graph object
+    G = nx.Graph()
+    
+    # Add nodes to the graph
+    nodes = list(adjacency_list.keys())
+    G.add_nodes_from(nodes)
+    
+    # Add edges to the graph
+    for node, connections in adjacency_list.items():
+        for connection in connections:
+            G.add_edge(node, connection[0], weight=connection[1])
+    
+    # Get the positions of the nodes in the graph
+    pos = nx.layout.spring_layout(G, k=0.15, iterations=50, scale=7)
+    
+    # Draw the nodes
+    nx.draw_networkx_nodes(G, pos, node_color='lightblue', node_size=50)
+    
+    # Draw the edges
+    edges = G.edges()
+    weights = [G[u][v]['weight'] for u, v in edges]
+    nx.draw_networkx_edges(G, pos, edgelist=edges, width=1, edge_color='gray')
+    
+    # Draw the labels
+    nx.draw_networkx_labels(G, pos, font_size=5, font_family='sans-serif')
+    
+    # Add a title and display the graph
+    plt.title("Graph of Nodes and Connections")
+    plt.axis('off')
+    plt.show()
