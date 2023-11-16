@@ -64,7 +64,7 @@ Magdeburg to Hannover, 148 km
 Hannover to Hamburg, 153 km
 ```
 
-Generated Image:
+Generated Image:  
 ![Standard Mode Image](https://i.imgur.com/ipISxBG.png)
 
 
@@ -84,7 +84,7 @@ Welby to Denver, 12 km
 Denver to Lakewood, 13 km
 ```
 
-Generated Image:
+Generated Image:  
 ![Geography Mode Image](https://i.imgur.com/1gXHtiE.png)
 
 _Notice how the cities are positioned similarly to their actual geographical locations on a map, offering a realistic depiction of the path's layout. This is because the `geopy` module is able to look up the coordinates of each city at runtime and `networkx` is able to create the graph accordingly._
