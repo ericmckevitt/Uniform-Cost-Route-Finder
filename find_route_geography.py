@@ -129,7 +129,7 @@ def plot_graph(adjacency_list: dict, city_coordinates: dict, path: list = []):
     nx.draw_networkx_labels(G, pos, font_size=5, font_family='sans-serif')
     
     # Add a title and display the graph
-    plt.title("Graph of Cities and Highways")
+    plt.title("Coordinate-based Uniform-Cost Search")
     plt.axis('off')
     plt.show()
 

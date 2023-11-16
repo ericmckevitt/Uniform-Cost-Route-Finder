@@ -5,6 +5,11 @@ By Eric McKevitt
 
 Uniform Cost Route Finder is a Python-based tool designed for pathfinding in graphs, specifically between city nodes. At its core, the application employs Uniform Cost Search (UCS), a prominent pathfinding algorithm widely used in the field of Artificial Intelligence. UCS is part of a family of search algorithms that are foundational in AI for solving problems that involve navigating through complex spaces or networks. By applying UCS, Uniform Cost Route Finder efficiently calculates the shortest route between cities, demonstrating a practical implementation of these algorithms in a real-world scenario. This project not only showcases the use of UCS in pathfinding but also serves as an illustrative example of how search algorithms are vital in AI for solving optimization and navigation problems.
 
+<p float="left">
+  <img src="https://i.imgur.com/ipISxBG.png" width="49%" />
+  <img src="https://i.imgur.com/1gXHtiE.png" width="49%" /> 
+</p>
+
 ## Features:
 
 * Uniform Cost Search for efficient pathfinding.  
@@ -59,7 +64,8 @@ Magdeburg to Hannover, 148 km
 Hannover to Hamburg, 153 km
 ```
 
-![Standard Image](https://i.imgur.com/ICmxRW5.png)
+Generated Image:
+![Standard Mode Image](https://i.imgur.com/ipISxBG.png)
 
 
 ### Example (Geography Mode):
@@ -78,7 +84,8 @@ Welby to Denver, 12 km
 Denver to Lakewood, 13 km
 ```
 
-![Geography Mode Image](https://i.imgur.com/ueEqvte.png)
+Generated Image:
+![Geography Mode Image](https://i.imgur.com/1gXHtiE.png)
 
 _Notice how the cities are positioned similarly to their actual geographical locations on a map, offering a realistic depiction of the path's layout. This is because the `geopy` module is able to look up the coordinates of each city at runtime and `networkx` is able to create the graph accordingly._
 

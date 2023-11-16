@@ -117,7 +117,7 @@ def plot_graph(adjacency_list: dict, path: list = [], random_seed: int = 0):
     nx.draw_networkx_labels(G, pos, font_size=5, font_family='sans-serif')
     
     # Add a title and display the graph
-    plt.title("Graph of Nodes and Connections")
+    plt.title("Standard Mode Uniform-Cost Search")
     plt.axis('off')
     plt.show()
 
