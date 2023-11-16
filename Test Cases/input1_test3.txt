@@ -1,7 +1,0 @@
-Input:
-python find_route.py input1.txt Bristol Stuttgart
-
-Output:
-distance: infinity
-route:
-none

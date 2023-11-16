@@ -1,9 +1,0 @@
-Input:
-python3 find_route.py custom_input.txt Boulder Southglenn
-
-Output:
-distance: 68 km
-route:
-Boulder to Denver, 47 km
-Denver to Englewood, 11 km
-Englewood to Southglenn, 10 km

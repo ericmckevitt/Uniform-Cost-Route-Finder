@@ -1,9 +1,0 @@
-Input:
-python3 find_route.py custom_input.txt Broomfield Littleton
-
-Output:
-distance: 46 km
-route:
-Broomfield to Arvada, 16 km
-Arvada to Lakewood, 12 km
-Lakewood to Littleton, 18 km

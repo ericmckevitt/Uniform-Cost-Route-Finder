@@ -13,24 +13,26 @@ Uniform Cost Route Finder is a Python-based tool designed for pathfinding in gra
     1. Standard mode, which utilizes a force-directed layout for node positioning, providing a visually balanced graph based on the network's structure.
     2. Geography mode using real-world city coordinates via `geopy`. 
 
-## Prerequisites
+## Prerequisites:
 
 * Python 3.9.13 or higher
 * Libraries: `matplotlib`, `networkx`, `numpy`, `heapq`
 * For geography mode: `geopy` library 
 
-## Installation
+## Installation:
 
 1. Clone the repository.  
 2. Install the required libraries:  
-`pip install matplotlib networkx numpy heapq`
+```
+pip install matplotlib networkx numpy heapq
+```
 3. For geography mode:  
 ```
 pip install geopy
 ```
 
 
-## Usage
+## Usage:
 Navigate to the project directory and run the following command in the terminal:
 
 ```bash
@@ -47,3 +49,10 @@ python find_route_geography.py [input_file] [source_city] [destination_city]
 python find_route.py input1.txt Bremen Frankfurt
 ```
 
+## Input File Format:
+The input file should contain city pairs with the distance between them in kilometers, ending with 'END OF INPUT'. For example:
+```
+CityA CityB 100
+CityB CityC 150
+END OF INPUT
+```
