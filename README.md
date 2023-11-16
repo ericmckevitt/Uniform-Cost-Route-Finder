@@ -31,7 +31,6 @@ pip install matplotlib networkx numpy heapq
 pip install geopy
 ```
 
-
 ## Usage:
 Navigate to the project directory and run the following command in the terminal:
 
@@ -44,10 +43,44 @@ For geography mode:
 python find_route_geography.py [input_file] [source_city] [destination_city]
 ```
 
-### Example: 
+### Example (Standard Mode): 
 ```
-python find_route.py input1.txt Bremen Frankfurt
+python find_route.py inputs/germany.txt Munich Hamburg
 ```
+
+Output: 
+```
+distance: 860 km
+route:
+Munich to Nuremberg, 171 km
+Nuremberg to Leipzig, 263 km
+Leipzig to Magdeburg, 125 km
+Magdeburg to Hannover, 148 km
+Hannover to Hamburg, 153 km
+```
+
+![Standard Image](https://i.imgur.com/ICmxRW5.png)
+
+
+### Example (Geography Mode):
+
+```
+python find_route_geography.py inputs/colorado.txt Northglenn Lakewood
+```
+
+Output:
+```
+distance: 33 km
+route:
+Northglenn to Thornton, 4 km
+Thornton to Welby, 4 km
+Welby to Denver, 12 km
+Denver to Lakewood, 13 km
+```
+
+![Geography Mode Image](https://i.imgur.com/ueEqvte.png)
+
+_Notice how the cities are positioned similarly to their actual geographical locations on a map, offering a realistic depiction of the path's layout. This is because the `geopy` module is able to look up the coordinates of each city at runtime and `networkx` is able to create the graph accordingly._
 
 ## Input File Format:
 The input file should contain city pairs with the distance between them in kilometers, ending with 'END OF INPUT'. For example:
