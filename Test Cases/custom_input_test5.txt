@@ -1,0 +1,7 @@
+Input:
+python3 find_route.py custom_input.txt Golden some_city_that_does_not_exist
+
+Output:
+distance: infinity
+route:
+none

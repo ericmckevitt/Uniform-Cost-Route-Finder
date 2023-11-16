@@ -1,0 +1,10 @@
+Input:
+python3 find_route.py custom_input.txt Golden Northglenn
+
+Output:
+distance: 41 km
+route:
+Golden to Arvada, 17 km
+Arvada to Welby, 16 km
+Welby to Thornton, 4 km
+Thornton to Northglenn, 4 km

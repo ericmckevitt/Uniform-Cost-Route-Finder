@@ -1,0 +1,12 @@
+Input: 
+python find_route.py input1.txt Munich Luebeck
+
+Output:
+distance: 923 km
+route:
+Munich to Nuremberg, 171 km
+Nuremberg to Leipzig, 263 km
+Leipzig to Magdeburg, 125 km
+Magdeburg to Hannover, 148 km
+Hannover to Hamburg, 153 km
+Hamburg to Luebeck, 63 km

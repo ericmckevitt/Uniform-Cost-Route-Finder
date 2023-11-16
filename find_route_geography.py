@@ -1,10 +1,23 @@
 import os
 import sys
-import pprint
 import matplotlib.pyplot as plt
 import networkx as nx
-import numpy as np
 import heapq
+from geopy.geocoders import Nominatim
+
+def fetch_city_coordinates(cities: list):
+    geolocator = Nominatim(user_agent="city_graph")
+    city_coordinates = {}
+
+    for city in cities:
+        location = geolocator.geocode(city)
+        if location:
+            city_coordinates[city] = (location.latitude, location.longitude)
+        else:
+            print(f"Unable to find coordinates for {city}")
+            city_coordinates[city] = (0, 0)  # or some other default coordinates
+
+    return city_coordinates
 
 def command_line_inputs():
     try:
@@ -16,7 +29,7 @@ def command_line_inputs():
         print('Usage: python main.py filename origin destination')
         sys.exit(1)
         
-def read_file(filename: str = "./Inputs/input1.txt") -> dict:
+def read_file(filename: str = "input1.txt") -> dict:
     
     '''
     Takes a file as input. 
@@ -77,13 +90,11 @@ def uniform_cost_search(adjacency_list: dict, origin: str, destination: str) -> 
     # If the destination node is not reached, return an empty path
     return []
 
-def plot_graph(adjacency_list: dict, path: list = [], random_seed: int = 0):
+def plot_graph(adjacency_list: dict, city_coordinates: dict, path: list = []):
     '''
-    Takes an adjacency list as input.
-    Draws a graph of nodes and their connections.
+    Takes an adjacency list and a dictionary of city coordinates as input.
+    Draws a graph of cities and their connections.
     '''
-    
-    np.random.seed(random_seed)
     
     # Create a new graph object
     G = nx.Graph()
@@ -97,8 +108,8 @@ def plot_graph(adjacency_list: dict, path: list = [], random_seed: int = 0):
         for connection in connections:
             G.add_edge(node, connection[0], weight=connection[1])
     
-    # Get the positions of the nodes in the graph
-    pos = nx.layout.spring_layout(G, k=0.1, iterations=50, scale=7)
+    # Convert city coordinates to positions
+    pos = {city: (coords[1], coords[0]) for city, coords in city_coordinates.items()}
     
     # Draw the nodes
     nx.draw_networkx_nodes(G, pos, node_color='lightblue', node_size=50)
@@ -118,9 +129,10 @@ def plot_graph(adjacency_list: dict, path: list = [], random_seed: int = 0):
     nx.draw_networkx_labels(G, pos, font_size=5, font_family='sans-serif')
     
     # Add a title and display the graph
-    plt.title("Graph of Nodes and Connections")
+    plt.title("Graph of Cities and Highways")
     plt.axis('off')
     plt.show()
+
     
 def output_path(adjacency_list: dict, path: list):
     # Compute the cost of the path
@@ -172,21 +184,14 @@ def main():
     
     adjacency_list: dict = read_file(filename)
     
-    # pprint.pprint(adjacency_list)
-    
-    # print("-" * 50, end='\n\n')
+    # Fetch the city coordinates
+    city_coordinates = fetch_city_coordinates(adjacency_list.keys())
     
     solution_path = uniform_cost_search(adjacency_list, origin, destination)
     
-    
-    
     output_path(adjacency_list, solution_path)
     
-    plot_graph(adjacency_list, path=solution_path)
-    
-    # print("Solution Path:", solution_path)
-    
-
+    plot_graph(adjacency_list, city_coordinates=city_coordinates, path=solution_path)
 
 if __name__ == '__main__':
     main()
