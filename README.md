@@ -11,4 +11,21 @@ Uniform Cost Route Finder is a Python-based tool designed for pathfinding in gra
 * Graphical visualization of city paths.  
 * Two operational modes:  
     1. Standard mode, which utilizes a force-directed layout for node positioning, providing a visually balanced graph based on the network's structure.
-    2. Geography mode using real-world city coordinates via `geopy`.  
+    2. Geography mode using real-world city coordinates via `geopy`. 
+
+## Prerequisites
+
+* Python 3.9.13 or higher
+* Libraries: `matplotlib`, `networkx`, `numpy`, `heapq`
+* For geography mode: `geopy` library 
+
+## Installation
+
+1. Clone the repository.  
+2. Install the required libraries:  
+`pip install matplotlib networkx numpy heapq`
+3. For geography mode:  
+`pip install geopy`
+
+## Usage
+Navigate to the project directory and run the following command in the terminal:
