@@ -25,7 +25,25 @@ Uniform Cost Route Finder is a Python-based tool designed for pathfinding in gra
 2. Install the required libraries:  
 `pip install matplotlib networkx numpy heapq`
 3. For geography mode:  
-`pip install geopy`
+```
+pip install geopy
+```
+
 
 ## Usage
 Navigate to the project directory and run the following command in the terminal:
+
+```bash
+python find_route.py [input_file] [source_city] [destination_city]
+```
+
+For geography mode:
+```
+python find_route_geography.py [input_file] [source_city] [destination_city]
+```
+
+### Example: 
+```
+python find_route.py input1.txt Bremen Frankfurt
+```
+
